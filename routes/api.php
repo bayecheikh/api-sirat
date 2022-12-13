@@ -29,6 +29,9 @@ use App\Http\Controllers\Api\LigneModeInvestissementController;
 use App\Http\Controllers\Api\ProfilController;
 use App\Http\Controllers\Api\DemandeController;
 use App\Http\Controllers\Api\StatistiqueController;
+use App\Http\Controllers\Api\ContenuController;
+use App\Http\Controllers\Api\CategorieController;
+use App\Http\Controllers\Api\SousCategorieController;
 
 
 /*
@@ -85,6 +88,17 @@ Route::middleware('auth:api')->group(function () {
 
     /**Gestion des permissions */
     Route::resource('permissions', PermissionController::class);
+
+    /**Gestion des contenus */
+    Route::resource('contenus', ContenuController::class);
+    Route::get('contenu-multiple-search/{term}', [ContenuController::class, 'ContenuMultipleSearch']);
+    Route::get('active_contenu/{id}', [ContenuController::class, 'activeContenu']);
+
+    /**Gestion des catégories */
+    Route::resource('categories', CategorieController::class);
+
+    /**Gestion des sous catégorie */
+    Route::resource('sous_categorie', SousCategorieController::class);
 
     /**Gestion des regions */
     Route::resource('regions', RegionController::class);

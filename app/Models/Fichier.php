@@ -17,15 +17,4 @@ class Fichier extends Model
     protected $fillable = [
         'name','url', 'extension', 'description','status'
     ];
-
-    public function structures() {
-
-        return $this->belongsToMany(Structure::class,'fichiers_structures');
-              
-    }
-    public function investissements() {
-
-        return $this->belongsToMany(Investissement::class,'fichiers_investissements');
-              
-    }
 }
