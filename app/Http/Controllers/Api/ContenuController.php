@@ -95,6 +95,7 @@ class ContenuController extends Controller
         }
 
         $contenu = Contenu::create([
+            'id_categorie' => $request->categories[0],
             'titre' => $input['titre'],
             'resume' => $input['resume'],
             'body' => $input['body']
@@ -166,6 +167,7 @@ class ContenuController extends Controller
             ->json($validator->errors());
         }
 
+        $contenu->id_categorie = $request->categories[0];
         $contenu->titre = $input['titre'];
         $contenu->resume = $input['resume'];
         $contenu->resume = $input['resume'];
