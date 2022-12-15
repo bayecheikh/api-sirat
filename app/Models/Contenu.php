@@ -18,7 +18,7 @@ class Contenu extends Model
     ];
               
     public function categories() {
-        return $this->belongsToMany(Categorie::class,'contenus_categories');          
+        return $this->belongsToMany(Categorie::class,'categories_contenus');          
     }
 
     public function futured_images() {
