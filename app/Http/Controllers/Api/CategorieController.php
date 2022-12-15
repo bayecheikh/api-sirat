@@ -24,7 +24,7 @@ class CategorieController extends Controller
     public function index()
     {
  
-        $categories = Categorie::with('contenus')->with('futured_images')->orderBy("libelle", "asc")->get();
+        $categories = Categorie::with('futured_images')->orderBy("libelle", "asc")->get();
         return response()->json(["success" => true, "message" => "Liste des categories", "data" => $categories]);
 
         
@@ -75,7 +75,7 @@ class CategorieController extends Controller
      */
     public function show($id)
     {
-        $categorie = Categorie::with('contenus')->with('futured_images')->find($id);
+        $categorie = Categorie::with('futured_images')->find($id);
         if (is_null($categorie))
         {
    /*          return $this->sendError('Product not found.'); */

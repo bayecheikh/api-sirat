@@ -142,7 +142,7 @@ class ContenuController extends Controller
         $contenu = Contenu::with('categories')->with('futured_images')->get()->find($id);
         if (is_null($contenu))
         {
-   /*          return $this->sendError('Product not found.'); */
+        /* return $this->sendError('Product not found.'); */
             return response()
             ->json(["success" => true, "message" => "Contenu introuvable."]);
         }
