@@ -93,8 +93,9 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, $id)
     {
+        $categorie = Categorie::find($id);
         $input = $request->all();
         $validator = Validator::make($input, ['libelle' => 'required']);
         if ($validator->fails())
@@ -104,6 +105,7 @@ class CategorieController extends Controller
             ->json($validator->errors());
         }
         $categorie->libelle = $input['libelle'];
+        $categorie->save();
 
         $old_fichiers = $categorie->futured_images();
 
@@ -131,7 +133,7 @@ class CategorieController extends Controller
             $categorie->futured_images()->attach($fichierObj);
         }
 
-        $categorie->save();
+       
         return response()
             ->json(["success" => true, "message" => "categorie modifiée avec succès.", "data" => $categorie]);
     }
@@ -143,7 +145,7 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
-        $categorie = Categorie::with('futured_images')->find($id);
+        $categorie = Categorie::find($id);
         $categorie->delete();
         return response()
             ->json(["success" => true, "message" => "categorie supprimée avec succès.", "data" => $categorie]);
