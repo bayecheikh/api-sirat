@@ -30,7 +30,7 @@ class ContenuController extends Controller
     public function index(Request $request)
     {
         if ($request->user()->hasRole('super_admin') || $request->user()->hasRole('admin_dprs')) {
-            $contenus = Contenu::with('categories')->with('futured_images')->paginate(10);
+            $contenus = Contenu::with('categories')->with('futured_images')->orderBy("created_at", "desc")->get();
         }
         
         $total = $contenus->total();
