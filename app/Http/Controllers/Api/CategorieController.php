@@ -141,8 +141,9 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy($id)
     {
+        $categorie = Categorie::with('futured_images')->find($id);
         $categorie->delete();
         return response()
             ->json(["success" => true, "message" => "categorie supprimée avec succès.", "data" => $categorie]);
