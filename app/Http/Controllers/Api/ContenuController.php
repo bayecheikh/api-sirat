@@ -32,10 +32,8 @@ class ContenuController extends Controller
         if ($request->user()->hasRole('super_admin') || $request->user()->hasRole('admin_dprs')) {
             $contenus = Contenu::with('categories')->with('futured_images')->orderBy("created_at", "desc")->get();
         }
-        
-        $total = $contenus->total();
 
-        return response()->json(["success" => true, "message" => "Liste des contenus", "data" =>$contenus,"total"=> $total]);   
+        return response()->json(["success" => true, "message" => "Liste des contenus", "data" =>$contenus]);   
     }
 
     /**
