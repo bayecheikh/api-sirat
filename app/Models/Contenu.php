@@ -22,6 +22,6 @@ class Contenu extends Model
     }
 
     public function futured_images() {
-        return $this->belongsToMany(Fichier::class,'contenus_fichiers');          
+        return $this->belongsToMany(Fichier::class,'contenus_futured_images');          
     }
 }

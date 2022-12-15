@@ -17,7 +17,7 @@ class Categorie extends Model
        'futured_image','status'
     ];
     public function futured_images() {
-        return $this->belongsToMany(Fichier::class,'categories_fichiers');          
+        return $this->belongsToMany(Fichier::class,'categories_futured_images');          
     }
     public function contenus() {
         return $this->belongsToMany(Contenu::class,'contenus_categories');          
