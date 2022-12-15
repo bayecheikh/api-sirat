@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('contenus_futured_images', function (Blueprint $table) {
             $table->unsignedInteger('contenu_id');
-            $table->unsignedInteger('futured_image_id');
-            $table->primary(['contenu_id','futured_image_id']);
+            $table->unsignedInteger('fichier_id');
+            $table->primary(['contenu_id','fichier_id']);
             $table->timestamps();
         });
     }

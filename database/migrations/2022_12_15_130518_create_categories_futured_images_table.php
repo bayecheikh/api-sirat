@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('categories_futured_images', function (Blueprint $table) {
             $table->unsignedInteger('categorie_id');
-            $table->unsignedInteger('futured_image_id');
-            $table->primary(['categorie_id','futured_image_id']);
+            $table->unsignedInteger('fichier_id');
+            $table->primary(['categorie_id','fichier_id']);
             $table->timestamps();
         });
     }
