@@ -93,7 +93,6 @@ class ContenuController extends Controller
         }
 
         $contenu = Contenu::create([
-            'id_categorie' => $request->categories[0],
             'titre' => $input['titre'],
             'resume' => $input['resume'],
             'body' => $input['body']
