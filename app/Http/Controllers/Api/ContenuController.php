@@ -9,6 +9,7 @@ use App\Models\Role;
 use App\Models\Permission;
 use App\Models\Contenu;
 use App\Models\Categorie;
+use App\Models\Fichier;
 use App\Models\SousCategorie;
 
 use Mail;
