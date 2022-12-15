@@ -8,6 +8,7 @@ use Validator;
 use App\Models\Role;
 use App\Models\Permission;
 use App\Models\Categorie;
+use App\Models\Fichier;
 
 class CategorieController extends Controller
 {
