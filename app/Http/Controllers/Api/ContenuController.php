@@ -100,8 +100,7 @@ class ContenuController extends Controller
             'body' => $input['body']
         ]);
 
-
-        $array_categories = $request->categories;
+        $array_categories = explode (",", $input['categories']);
 
         if(!empty($array_categories)){
             foreach($array_categories as $categorie){
@@ -173,7 +172,7 @@ class ContenuController extends Controller
         $contenu->body = $input['body'];
         $contenu->save();
 
-        $array_categories = $request->categories;
+        $array_categories = explode (",", $input['categories']);
         $old_categories = $contenu->categories();
 
         if(!empty($array_categories)){
