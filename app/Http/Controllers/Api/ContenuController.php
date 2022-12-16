@@ -154,11 +154,10 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contenu $contenu)
+    public function update(Request $request, $id)
     {
+        $contenu = Contenu::find($id);
         $input = $request->all();
-        $contenu = Contenu::find($input['id']);
-        
         $validator = Validator::make($input, ['titre' => 'required','resume' => 'required', 'body' => 'required']);
         if ($validator->fails())
         {
