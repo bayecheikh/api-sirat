@@ -192,7 +192,7 @@ class ContenuController extends Controller
 
             foreach($old_fichiers as $fichier){
                 $fichierObj = Fichier::where('id',$fichier)->first();
-                $contenu->fichiers()->detach($fichierObj);
+                $contenu->futured_images()->detach($fichierObj);
             }
             
             $upload_path = public_path('upload');
@@ -209,7 +209,7 @@ class ContenuController extends Controller
                 'extension' => $file_extension,
                 'description' => 'Futured Image'
             ]);
-            $contenu->fichiers()->attach($fichierObj);
+            $contenu->futured_images()->attach($fichierObj);
         }
 
 
