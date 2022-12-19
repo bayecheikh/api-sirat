@@ -67,7 +67,7 @@ class StatistiqueController extends Controller
      */
     public function allcontenus()
     {
-        $contenus = Contenu::get();
+        $contenus = Contenu::with('categories')->with('futured_images')->get();
         return response()->json(["success" => true, "message" => "Liste des contenus", "data" => $contenus]);
         
     }
