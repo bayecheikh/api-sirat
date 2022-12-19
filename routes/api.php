@@ -50,6 +50,9 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('forget_password', [AuthController::class, 'forget_password']);
 
  /**Statistique*/
+ Route::get('allcategories', [StatistiqueController::class, 'allcategories']);
+ Route::get('allcontenus', [StatistiqueController::class, 'allcontenus']);
+ 
  Route::get('allStats', [StatistiqueController::class, 'allStats']);
  Route::get('allPiliers', [StatistiqueController::class, 'allPilier']);
  Route::get('allAxes', [StatistiqueController::class, 'allAxe']);

@@ -27,6 +27,8 @@ use App\Models\Region;
 use App\Models\Departement;
 use App\Models\Pilier;
 use App\Models\Axe;
+use App\Models\Categorie;
+use App\Models\Contenu;
 
 class StatistiqueController extends Controller
 {
@@ -44,6 +46,30 @@ class StatistiqueController extends Controller
     public function index(Request $request)
     {        
        return '';    
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allcategories()
+    {
+        $categories = Categorie::get();
+        return response()->json(["success" => true, "message" => "Liste des catégories", "data" => $categories]);
+        
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allcontenus()
+    {
+        $contenus = Contenu::get();
+        return response()->json(["success" => true, "message" => "Liste des contenus", "data" => $contenus]);
+        
     }
 
     /**
