@@ -97,6 +97,7 @@ class ContenuController extends Controller
             'id_categorie' => $input['id_categorie'],
             'titre' => $input['titre'],
             'resume' => $input['resume'],
+            'slug' => $input['slug'],
             'body' => $input['body']
         ]);
 
@@ -170,6 +171,7 @@ class ContenuController extends Controller
         $contenu->titre = $input['titre'];
         $contenu->resume = $input['resume'];
         $contenu->body = $input['body'];
+        $contenu->slug = $input['slug'];
         $contenu->save();
 
         $array_categories = explode (",", $input['categories']);

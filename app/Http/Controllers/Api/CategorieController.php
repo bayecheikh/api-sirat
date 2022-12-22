@@ -105,6 +105,7 @@ class CategorieController extends Controller
             ->json($validator->errors());
         }
         $categorie->libelle = $input['libelle'];
+        $categorie->slug = $input['slug'];
         $categorie->save();
 
         $old_fichiers = $categorie->futured_images();
