@@ -39,7 +39,7 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $validator = Validator::make($input, ['libelle' => 'required']);
+        $validator = Validator::make($input, ['libelle' => 'required','slug' => 'required']);
         if ($validator->fails())
         {
             //return $this->sendError('Validation Error.', $validator->errors());

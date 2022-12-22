@@ -13,7 +13,7 @@ class Categorie extends Model
     *
     * @var array
     */
-    protected $fillable = ['libelle',
+    protected $fillable = ['libelle','slug',
        'futured_image','status'
     ];
     public function futured_images() {
