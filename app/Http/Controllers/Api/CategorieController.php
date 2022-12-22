@@ -25,7 +25,7 @@ class CategorieController extends Controller
     public function index()
     {
  
-        $categories = Categorie::with('futured_images')->orderBy("libelle", "asc")->get();
+        $categories = Categorie::with('futured_images')->with('futured_images')->orderBy("libelle", "asc")->get();
         return response()->json(["success" => true, "message" => "Liste des categories", "data" => $categories]);
 
         

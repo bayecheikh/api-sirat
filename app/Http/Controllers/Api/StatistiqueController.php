@@ -77,6 +77,23 @@ class StatistiqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function contenuById($id){
+        $contenu = Contenu::with('categories')->with('futured_images')->get()->find($id);
+        if (is_null($contenu))
+        {
+        /* return $this->sendError('Product not found.'); */
+            return response()
+            ->json(["success" => true, "message" => "Contenu introuvable."]);
+        }
+        return response()
+            ->json(["success" => true, "message" => "Contenu trouvé avec succès.", "data" => $contenu]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function allPilier()
     {
         $piliers = Pilier::with('axes')->get();
