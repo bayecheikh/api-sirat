@@ -96,8 +96,8 @@ class ContenuController extends Controller
         $contenu = Contenu::create([
             'id_categorie' => $input['id_categorie'],
             'titre' => $input['titre'],
-            'resume' => $input['resume'],
             'slug' => $input['slug'],
+            'resume' => $input['resume'],       
             'body' => $input['body']
         ]);
 
