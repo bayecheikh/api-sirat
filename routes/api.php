@@ -53,6 +53,8 @@ Route::post('forget_password', [AuthController::class, 'forget_password']);
  Route::get('allcategories', [StatistiqueController::class, 'allcategories']);
  Route::get('allcontenus', [StatistiqueController::class, 'allcontenus']);
  Route::get('allcontenus/{id}', [StatistiqueController::class, 'contenuById']);
+ Route::get('allpostepeages', [StatistiqueController::class, 'allpostepeages']);
+ Route::get('allpostepeages/{id}', [StatistiqueController::class, 'poste_peageById']);
  
  Route::get('allStats', [StatistiqueController::class, 'allStats']);
  Route::get('allPiliers', [StatistiqueController::class, 'allPilier']);

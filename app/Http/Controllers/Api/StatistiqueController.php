@@ -94,6 +94,35 @@ class StatistiqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function allpostepeages()
+    {
+        $post_peages = PostPeage::get();
+        return response()->json(["success" => true, "message" => "Liste des post_peages", "data" => $contenus]);
+        
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function poste_peageById($id){
+        $contenu = PostPeage::get()->find($id);
+        if (is_null($post_peage))
+        {
+        /* return $this->sendError('Product not found.'); */
+            return response()
+            ->json(["success" => true, "message" => "post_peage introuvable."]);
+        }
+        return response()
+            ->json(["success" => true, "message" => "post_peage trouvé avec succès.", "data" => $contenu]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function allPilier()
     {
         $piliers = Pilier::with('axes')->get();
