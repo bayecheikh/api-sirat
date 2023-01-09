@@ -100,6 +100,11 @@ Route::middleware('auth:api')->group(function () {
     Route::get('contenu-multiple-search/{term}', [ContenuController::class, 'ContenuMultipleSearch']);
     Route::get('active_contenu/{id}', [ContenuController::class, 'activeContenu']);
 
+    /**Gestion des poste de péages */
+    Route::resource('postepeages', PostePeageController::class);
+    Route::get('postepeage-multiple-search/{term}', [PostePeageController::class, 'postepeageMultipleSearch']);
+    Route::get('active_postepeage/{id}', [PostePeageController::class, 'activePostepeage']);
+
     /**Gestion des catégories */
     Route::resource('categories', CategorieController::class);
 

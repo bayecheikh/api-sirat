@@ -42,7 +42,7 @@ class PostePeageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function poste_peageMultipleSearch($term)
+    public function postepeageMultipleSearch($term)
     {
         if ($request->user()->hasRole('super_admin') || $request->user()->hasRole('admin_dprs')) {
             $poste_peages = PostePeage::where('id', 'like', '%'.$term.'%')->orWhere('titre', 'like', '%'.$term.'%')->paginate(10);
@@ -55,7 +55,7 @@ class PostePeageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function activeposte_peage($id)
+    public function activePostepeage($id)
     {
         $poste_peage = PostePeage::find($id);
 
