@@ -30,6 +30,7 @@ use App\Http\Controllers\Api\ProfilController;
 use App\Http\Controllers\Api\DemandeController;
 use App\Http\Controllers\Api\StatistiqueController;
 use App\Http\Controllers\Api\ContenuController;
+use App\Http\Controllers\Api\PostePeageController;
 use App\Http\Controllers\Api\CategorieController;
 use App\Http\Controllers\Api\SousCategorieController;
 
