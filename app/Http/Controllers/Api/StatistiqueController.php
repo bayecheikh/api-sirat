@@ -29,6 +29,7 @@ use App\Models\Pilier;
 use App\Models\Axe;
 use App\Models\Categorie;
 use App\Models\Contenu;
+use App\Models\PostePeage;
 
 class StatistiqueController extends Controller
 {
@@ -96,7 +97,7 @@ class StatistiqueController extends Controller
      */
     public function allpostepeages()
     {
-        $post_peages = PostPeage::get();
+        $post_peages = PostePeage::get();
         return response()->json(["success" => true, "message" => "Liste des post_peages", "data" => $contenus]);
         
     }
@@ -107,7 +108,7 @@ class StatistiqueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function poste_peageById($id){
-        $contenu = PostPeage::get()->find($id);
+        $contenu = PostePeage::get()->find($id);
         if (is_null($post_peage))
         {
         /* return $this->sendError('Product not found.'); */
