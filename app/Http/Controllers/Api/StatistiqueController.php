@@ -98,7 +98,7 @@ class StatistiqueController extends Controller
     public function allpostepeages()
     {
         $post_peages = PostePeage::get();
-        return response()->json(["success" => true, "message" => "Liste des post_peages", "data" => $contenus]);
+        return response()->json(["success" => true, "message" => "Liste des post_peages", "data" =>  $post_peages]);
         
     }
 
