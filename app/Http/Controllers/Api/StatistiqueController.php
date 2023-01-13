@@ -30,6 +30,7 @@ use App\Models\Axe;
 use App\Models\Categorie;
 use App\Models\Contenu;
 use App\Models\PostePeage;
+use App\Models\MarchePublic;
 
 class StatistiqueController extends Controller
 {
