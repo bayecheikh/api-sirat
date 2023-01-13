@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('marche_publics_futured_images', function (Blueprint $table) {
             $table->unsignedInteger('marche_public_id');
             $table->unsignedInteger('fichier_id');
-            $table->primary(['marche_public_id','fichier_id']);
+            $table->primary(['marche_public_id','fichier_id'],'marche_fichier_id');
             $table->timestamps();
         });
     }
