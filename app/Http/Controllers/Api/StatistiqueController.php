@@ -96,6 +96,36 @@ class StatistiqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function allmarchepublics()
+    {
+        $marchePublics = MarchePublic::with('categories')->with('futured_images')->get();
+        return response()->json(["success" => true, "message" => "Liste des marchePublics", "data" => $marchePublics]);
+        
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function marchePublicById($id){
+        $marchePublic = MarchePublic::with('categories')->with('futured_images')->get()->find($id);
+        if (is_null($marchePublic))
+        {
+        /* return $this->sendError('Product not found.'); */
+            return response()
+            ->json(["success" => true, "message" => "marchePublic introuvable."]);
+        }
+        return response()
+            ->json(["success" => true, "message" => "marchePublic trouvé avec succès.", "data" => $marchePublic]);
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function allpostepeages()
     {
         $post_peages = PostePeage::get();
