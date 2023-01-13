@@ -56,6 +56,8 @@ Route::post('forget_password', [AuthController::class, 'forget_password']);
  Route::get('allcontenus/{id}', [StatistiqueController::class, 'contenuById']);
  Route::get('allpostepeages', [StatistiqueController::class, 'allpostepeages']);
  Route::get('allpostepeages/{id}', [StatistiqueController::class, 'poste_peageById']);
+ Route::get('allmarchepublics', [StatistiqueController::class, 'allmarchepublics']);
+ Route::get('allmarchepublics/{id}', [StatistiqueController::class, 'marchepublicById']);
  
  Route::get('allStats', [StatistiqueController::class, 'allStats']);
  Route::get('allPiliers', [StatistiqueController::class, 'allPilier']);
@@ -98,8 +100,13 @@ Route::middleware('auth:api')->group(function () {
 
     /**Gestion des contenus */
     Route::resource('contenus', ContenuController::class);
-    Route::get('contenu-multiple-search/{term}', [ContenuController::class, 'ContenuMultipleSearch']);
+    Route::get('contenu-multiple-search/{term}', [ContenuController::class, 'contenuMultipleSearch']);
     Route::get('active_contenu/{id}', [ContenuController::class, 'activeContenu']);
+
+    /**Gestion des contenus */
+    Route::resource('marchepublics', MarchePublicController::class);
+    Route::get('marchepublic-multiple-search/{term}', [MarchePublicController::class, 'marchePublicMultipleSearch']);
+    Route::get('active_contenu/{id}', [MarchePublicController::class, 'activeMarchePublic']);
 
     /**Gestion des poste de péages */
     Route::resource('postepeages', PostePeageController::class);

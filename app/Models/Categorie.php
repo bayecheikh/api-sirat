@@ -20,7 +20,10 @@ class Categorie extends Model
         return $this->belongsToMany(Fichier::class,'categories_futured_images');          
     }
     public function contenus() {
-        return $this->belongsToMany(Contenu::class,'contenus_categories');          
+        return $this->belongsToMany(Contenu::class,'categories_contenus');          
+    }
+    public function marche_publics() {
+        return $this->belongsToMany(Contenu::class,'marche_publics_categories');          
     }
     
 }
