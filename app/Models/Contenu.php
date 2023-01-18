@@ -14,7 +14,7 @@ class Contenu extends Model
     * @var array
     */
     protected $fillable = ['id_categorie','titre','slug','resume','body',
-       'futured_image','status'
+       'futured_image','status','lien'
     ];
               
     public function categories() {
