@@ -31,6 +31,7 @@ use App\Models\Categorie;
 use App\Models\Contenu;
 use App\Models\PostePeage;
 use App\Models\MarchePublic;
+use App\Models\GestionRh;
 
 class StatistiqueController extends Controller
 {
@@ -137,7 +138,7 @@ class StatistiqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function marchePublicById($id){
+    public function gestionRhById($id){
         $gestionRh = GestionRh::with('categories')->with('futured_images')->get()->find($id);
         if (is_null($gestionRh))
         {
