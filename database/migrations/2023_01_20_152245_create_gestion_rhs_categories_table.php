@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('gestion_rhs_categories', function (Blueprint $table) {
             $table->unsignedInteger('categorie_id');
-            $table->unsignedInteger('marche_public_id');
+            $table->unsignedInteger('gestion_rh_id');
             $table->primary(['categorie_id','gestion_rh_id']);
             $table->timestamps();
         });
