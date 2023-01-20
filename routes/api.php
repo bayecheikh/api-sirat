@@ -113,7 +113,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('active_marchepublic/{id}', [MarchePublicController::class, 'activeMarchePublic']);
 
     /**Gestion des contenus */
-    Route::resource('gestionrhs', MarchePublicController::class);
+    Route::resource('gestionrhs',GestionRhController::class);
     Route::get('gestionrh-multiple-search/{term}', [GestionRhController::class, 'gestionRhMultipleSearch']);
     Route::get('active_gestionrh/{id}', [GestionRhController::class, 'activeGestionRh']);
 
