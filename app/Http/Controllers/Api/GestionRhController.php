@@ -131,7 +131,7 @@ class GestionRhController extends Controller
             $gestionRh->futured_images()->attach($fichierObj);
         }
 
-        return response()->json(["success" => true, "message" => "gestionRh créé avec succès.", "data" => $gestionRh]);
+        return response()->json(["success" => true, "message" => "Offre créé avec succès.", "data" => $gestionRh]);
     }
     /**
      * Display the specified resource.
@@ -146,10 +146,10 @@ class GestionRhController extends Controller
         {
         /* return $this->sendError('Product not found.'); */
             return response()
-            ->json(["success" => true, "message" => "gestionRh introuvable."]);
+            ->json(["success" => true, "message" => "Offre introuvable."]);
         }
         return response()
-            ->json(["success" => true, "message" => "gestionRh trouvé avec succès.", "data" => $gestionRh]);
+            ->json(["success" => true, "message" => "Offre trouvé avec succès.", "data" => $gestionRh]);
     }
     /**
      * Update the specified resource in storage.
@@ -222,7 +222,7 @@ class GestionRhController extends Controller
 
 
         return response()
-            ->json(["success" => true, "message" => "gestionRh modifié avec succès.", "data" => $gestionRh]);
+            ->json(["success" => true, "message" => "Offre modifié avec succès.", "data" => $gestionRh]);
     }
     /**
      * Remove the specified resource from storage.
@@ -234,6 +234,6 @@ class GestionRhController extends Controller
     {
         $gestionRh->delete();
         return response()
-            ->json(["success" => true, "message" => "gestionRh supprimé avec succès.", "data" => $gestionRh]);
+            ->json(["success" => true, "message" => "Offre supprimé avec succès.", "data" => $gestionRh]);
     }
 }
