@@ -32,6 +32,7 @@ use App\Http\Controllers\Api\StatistiqueController;
 use App\Http\Controllers\Api\ContenuController;
 use App\Http\Controllers\Api\PostePeageController;
 use App\Http\Controllers\Api\MarchePublicController;
+use App\Http\Controllers\Api\GestionRhController;
 use App\Http\Controllers\Api\CategorieController;
 use App\Http\Controllers\Api\SousCategorieController;
 
@@ -59,6 +60,8 @@ Route::post('forget_password', [AuthController::class, 'forget_password']);
  Route::get('allpostepeages/{id}', [StatistiqueController::class, 'poste_peageById']);
  Route::get('allmarchepublics', [StatistiqueController::class, 'allmarchepublics']);
  Route::get('allmarchepublics/{id}', [StatistiqueController::class, 'marchepublicById']);
+ Route::get('allgestionrhs', [StatistiqueController::class, 'allgestionrhs']);
+ Route::get('allgestionrhs/{id}', [StatistiqueController::class, 'gestionrhById']);
  
  Route::get('allStats', [StatistiqueController::class, 'allStats']);
  Route::get('allPiliers', [StatistiqueController::class, 'allPilier']);
@@ -104,10 +107,15 @@ Route::middleware('auth:api')->group(function () {
     Route::get('contenu-multiple-search/{term}', [ContenuController::class, 'contenuMultipleSearch']);
     Route::get('active_contenu/{id}', [ContenuController::class, 'activeContenu']);
 
-    /**Gestion des contenus */
+    /**Gestion des marchés publics */
     Route::resource('marchepublics', MarchePublicController::class);
     Route::get('marchepublic-multiple-search/{term}', [MarchePublicController::class, 'marchePublicMultipleSearch']);
-    Route::get('active_contenu/{id}', [MarchePublicController::class, 'activeMarchePublic']);
+    Route::get('active_marchepublic/{id}', [MarchePublicController::class, 'activeMarchePublic']);
+
+    /**Gestion des contenus */
+    Route::resource('gestionrhs', MarchePublicController::class);
+    Route::get('gestionrh-multiple-search/{term}', [GestionRhController::class, 'gestionRhMultipleSearch']);
+    Route::get('active_gestionrh/{id}', [GestionRhController::class, 'activeGestionRh']);
 
     /**Gestion des poste de péages */
     Route::resource('postepeages', PostePeageController::class);

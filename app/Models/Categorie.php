@@ -25,5 +25,8 @@ class Categorie extends Model
     public function marche_publics() {
         return $this->belongsToMany(Contenu::class,'marche_publics_categories');          
     }
+    public function gestion_rhs() {
+        return $this->belongsToMany(Contenu::class,'gestion_rhs_categories');          
+    }
     
 }
