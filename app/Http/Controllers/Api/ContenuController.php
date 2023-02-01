@@ -174,7 +174,7 @@ class ContenuController extends Controller
         $contenu->resume = $input['resume'];
         $contenu->body = $input['body'];
         $contenu->slug = $input['slug'];
-        $contenu->lien = $input['lien'];
+        //$contenu->lien = $input['lien'];
         $contenu->categorie = $input['categorie'];
         $contenu->save();
 
