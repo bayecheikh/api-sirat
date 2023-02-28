@@ -228,7 +228,7 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contenu $contenu)
+    public function destroy(Contenu $contenu,Request $request)
     {
         if($request->user()->hasRole('super_admin')){
             $contenu->delete();
