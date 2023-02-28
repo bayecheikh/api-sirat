@@ -230,8 +230,15 @@ class ContenuController extends Controller
      */
     public function destroy(Contenu $contenu)
     {
-        $contenu->delete();
-        return response()
+        if($request->user()->hasRole('super_admin')){
+            $contenu->delete();
+            return response()
             ->json(["success" => true, "message" => "Contenu supprimé avec succès.", "data" => $contenu]);
+        }
+        else{
+            return response()
+            ->json(["success" => true, "message" => "Suppression impossible, vous n'avez pas les droits requis", "data" => null]);
+        }
+        
     }
 }
