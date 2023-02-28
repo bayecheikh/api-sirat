@@ -13,7 +13,7 @@ class Contenu extends Model
     *
     * @var array
     */
-    protected $fillable = ['id_categorie','titre','slug','resume','body',
+    protected $fillable = ['id_categorie','titre','categorie','slug','resume','body',
        'futured_image','status','lien'
     ];
               
